@@ -2,11 +2,9 @@
 
 This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
 
-# Problem statement 
-Many people are fan of sport espically Basketball, but there no place for people come together and dicuss thier pass for sport in this case Basketball.
+# Problem statement
+Many people are fan of sport especially Basketball, but there no place for people come together  to discuss for sport in this case Basketball.
 
 
 # solution
- we want to create a platform that provide statistics information as well as  dicussion and lastly user will be able to create bracket for NBA.
-
-
+We want to create a platform that provides statistics information as well as  discussion and lastly users will be able to create brackets for the NBA.
