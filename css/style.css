@@ -1,16 +1,64 @@
 body {
-	margin-left: 10%;
-	margin-right: 10%;
 	color: #4b4b4b;
   font-family: 'Open Sans', sans-serif;
-}
-
-section {
-	margin-top: 50px;
+  height: 100%;
 }
 
 h1, h2, h3 {
   color: #4b2e83;
   font-family: 'Encode Sans', sans-serif;
   font-weight: 900;
+}
+
+.gridView {
+  width: 50%;
+  height: 100%;
+  padding: 3%;
+}
+
+.gridView > div {
+  display: flex;
+  width: 40%;
+  padding: 10px;
+}
+
+/* grid card */
+.card-body {
+  border: thick double black;
+  border-collapse: collapse;
+  float: left;
+}
+
+.card img {
+  width: 30%;
+  float: left;
+}
+
+.player-name {
+  text-align: center;
+  font-size: 150%;
+}
+
+.player-bio {
+  text-align: left;
+}
+
+.submitPlayer{
+  display: flex;
+  justify-content: left;
+  padding: 3%;
+}
+
+.title {
+  font-size: 300%;
+  color: black;
+  font-weight: bold;
+  background-color: #e0dddd;
+  text-align: center;
+}
+
+.player-info {
+  background-color: #e0dddd;
+  border: thick double black;
+  padding: 3%;
 }
