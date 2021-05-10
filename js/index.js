@@ -3,7 +3,7 @@ var data = {
   players: [
     { id: 1, name: 'LeBron', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is average point scorer' },
     { id: 2, name: 'Karl', school: 'UCLA', points: 3, assists: 4, rebounds: 5, note: 'he is average rebounder' },
-    { id: 3, name: 'Lonzo', school: 'WASU', points: 6, assists: 4, rebounds: 5, note: 'he is great point scerer' },
+    { id: 3, name: 'Lonzo', school: 'WASU', points: 6, assists: 4, rebounds: 5, note: 'he is great point scorer' },
     { id: 4, name: 'Kentavious', school: 'NYU', points: 4, assists: 4, rebounds: 5, note: 'he is good point scorer' }
   ]
 };
@@ -55,6 +55,7 @@ function createUlList(player) {
   return ulTag;
 }
 
+
 // create a single card given a player's info
 function createCard(player) {
 
@@ -78,6 +79,9 @@ function createCard(player) {
   // console.log(cardBody);
   return cardBody;
 }
+
+
+
 $('.gridView').append(createCard(data.players[0]));
 $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
@@ -90,3 +94,27 @@ $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
 
 
+
+let submission = document.getElementsByClassName("submit");
+
+submission.addEventListener('click', addCard);
+submission.addEventListener('click', warn);
+
+
+function addCard() {​​​​​​​​
+  let player = {​​​​​​​​}​​​​​​​​;
+  player.name = document.getElementById("playername").value;
+  player.school = document.getElementById("playerschool").value;
+  player.points = document.getElementById("ppg").value;
+  player.assists = document.getElementById("apg").value;
+  player.rebounds = document.getElementById("rpg").value;
+  player.note = document.getElementById("playernote").value;
+  console.log(player);
+  // create a object like:
+  // {​​​​​​​​ id: 1, name: 'player1', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is pretty cool dude1111111' }​​​​​​​​
+  $('.gridView').append(createCard(player));
+}​​​​​​​​
+
+function warn() {
+  alert("Successfully added player.")
+}
