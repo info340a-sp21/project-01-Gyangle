@@ -26,10 +26,11 @@ function detailBtn(id) {
   btn.className = 'btn btn-dark detailBtn';
   btn.textContent = 'Note';
   btn.id = id;
-  btn.addEventListener('click',showNote);
+  btn.addEventListener('click', showNote);
   return btn;
 }
 
+// event when the note btn was clicked
 function showNote() {
   $('#note').empty();
   let id = this.id;
@@ -77,6 +78,11 @@ function createCard(player) {
   // console.log(cardBody);
   return cardBody;
 }
-
+$('.gridView').append(createCard(data.players[0]));
 $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
+$('.gridView').append(createCard(data.players[0]));
+$('.gridView').append(createCard(data.players[1]));
+$('.gridView').append(createCard(data.players[2]));
+
+

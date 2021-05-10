@@ -63,3 +63,9 @@ ul {
   padding: 0; /* Remove padding */
 
 }
+
+#note {
+  border: thick double black;
+  padding: 10px 20px;
+  margin: 5px 20px;
+}
