@@ -1,11 +1,21 @@
-body {
-  height: 100%;
+*{
+  box-sizing:border-box;
+  }
+  /*header*/
+header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background-color: #8b7878;
 }
+/* body {
+  height: 100%;
+} */
 
 h1, h2, h3 {
   color: #4b2e83;
   font-family: 'Encode Sans', sans-serif;
-  font-weight: 900;
+  font-weight: 90;
 }
 .gridView {
   width: 100%;
@@ -15,7 +25,7 @@ h1, h2, h3 {
 }
 .gridView > div {
   display: flex;
-  margin: 10px;
+  margin: 20px;
 }
 
 /* grid card */
