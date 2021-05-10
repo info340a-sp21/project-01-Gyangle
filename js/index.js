@@ -58,7 +58,6 @@ function createUlList(player) {
 
 // create a single card given a player's info
 function createCard(player) {
-
   // create first div
   let colDiv = document.createElement('div');
   colDiv.classList.add('col-sm');
@@ -80,8 +79,6 @@ function createCard(player) {
   return cardBody;
 }
 
-
-
 $('.gridView').append(createCard(data.players[0]));
 $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
@@ -93,28 +90,29 @@ $('.gridView').append(createCard(data.players[3]));
 $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
 
+// add an card from form
+function addCard(){
+  let player = {};
+  player.id = data.players.length + 1;
+  player.name = document.getElementById("playername").value;
+  player.school = document.getElementById("playerschool").value;
+  player.points = document.getElementById("ppg").value;
+  player.assists = document.getElementById("apg").value;
+  player.rebounds = document.getElementById("rpg").value;
+  player.note = document.getElementById("playernote").value;
+  data.players.push(player);
+  $('.gridView').append(createCard(player));
+}
 
+// display warning on adding player
+function warn() {
+  alert("Successfully added player.")
+}
 
-// let submission = document.getElementsByClassName("submit");
-
-// submission.addEventListener('click', addCard);
-// submission.addEventListener('click', warn);
-
-
-// function addCard() {​​​​​​​​
-//   let player = {​​​​​​​​}​​​​​​​​;
-//   player.name = document.getElementById("playername").value;
-//   player.school = document.getElementById("playerschool").value;
-//   player.points = document.getElementById("ppg").value;
-//   player.assists = document.getElementById("apg").value;
-//   player.rebounds = document.getElementById("rpg").value;
-//   player.note = document.getElementById("playernote").value;
-//   console.log(player);
-//   // create a object like:
-//   // {​​​​​​​​ id: 1, name: 'player1', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is pretty cool dude1111111' }​​​​​​​​
-//   $('.gridView').append(createCard(player));
-// }​​​​​​​​
-
-// function warn() {
-//   alert("Successfully added player.")
-// }
+let submit = document.querySelector("form");
+submit.addEventListener('submit', function(e) {
+  e.preventDefault();
+  addCard();
+  warn();
+  console.log(data.players);
+});

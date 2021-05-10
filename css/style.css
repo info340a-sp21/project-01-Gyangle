@@ -1,6 +1,6 @@
 *{
-  box-sizing:border-box;
-  }
+  box-sizing: border-box;
+}
 
 header{
   width: 100%;
@@ -22,17 +22,18 @@ h1, h2, h3 {
   font-weight: 90;
   padding: 1%;
 }
-.gridView {
 
+.gridView {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .gridView > div {
   display: flex;
   margin: 20px;
-  
+  max-width: 400px;
 }
 
 /* grid card */
@@ -43,7 +44,6 @@ h1, h2, h3 {
   border: thick double black;
   border-collapse: collapse;
 }
-
 
 .player-name {
   text-align: center;
