@@ -22,8 +22,11 @@ h1, h2, h3 {
   font-weight: 700;
 }
 .gridView {
-  width: 40%;
-  
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .gridView > div {
   display: flex;
@@ -38,7 +41,6 @@ h1, h2, h3 {
   flex-flow: center;
   border: thick double black;
   border-collapse: collapse;
-  float: left;
 }
 
 
