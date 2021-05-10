@@ -107,7 +107,7 @@ fetch('src/players.json')
       console.log(data.players);
     });
   })
-  .catch(function (e) {
+  .catch(function () {
         // create div with specifed className that contains a p tag
         function createDiv(className, content) {
           let pTag = document.createElement('p');
