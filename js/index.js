@@ -95,26 +95,26 @@ $('.gridView').append(createCard(data.players[2]));
 
 
 
-let submission = document.getElementsByClassName("submit");
+// let submission = document.getElementsByClassName("submit");
 
-submission.addEventListener('click', addCard);
-submission.addEventListener('click', warn);
+// submission.addEventListener('click', addCard);
+// submission.addEventListener('click', warn);
 
 
-function addCard() {​​​​​​​​
-  let player = {​​​​​​​​}​​​​​​​​;
-  player.name = document.getElementById("playername").value;
-  player.school = document.getElementById("playerschool").value;
-  player.points = document.getElementById("ppg").value;
-  player.assists = document.getElementById("apg").value;
-  player.rebounds = document.getElementById("rpg").value;
-  player.note = document.getElementById("playernote").value;
-  console.log(player);
-  // create a object like:
-  // {​​​​​​​​ id: 1, name: 'player1', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is pretty cool dude1111111' }​​​​​​​​
-  $('.gridView').append(createCard(player));
-}​​​​​​​​
+// function addCard() {​​​​​​​​
+//   let player = {​​​​​​​​}​​​​​​​​;
+//   player.name = document.getElementById("playername").value;
+//   player.school = document.getElementById("playerschool").value;
+//   player.points = document.getElementById("ppg").value;
+//   player.assists = document.getElementById("apg").value;
+//   player.rebounds = document.getElementById("rpg").value;
+//   player.note = document.getElementById("playernote").value;
+//   console.log(player);
+//   // create a object like:
+//   // {​​​​​​​​ id: 1, name: 'player1', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is pretty cool dude1111111' }​​​​​​​​
+//   $('.gridView').append(createCard(player));
+// }​​​​​​​​
 
-function warn() {
-  alert("Successfully added player.")
-}
+// function warn() {
+//   alert("Successfully added player.")
+// }
