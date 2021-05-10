@@ -1,118 +1,126 @@
 'use strict'
-var data = {
-  players: [
-    { id: 1, name: 'LeBron', school: 'UW', points: 3, assists: 4, rebounds: 5, note: 'he is average point scorer' },
-    { id: 2, name: 'Karl', school: 'UCLA', points: 3, assists: 4, rebounds: 5, note: 'he is average rebounder' },
-    { id: 3, name: 'Lonzo', school: 'WASU', points: 6, assists: 4, rebounds: 5, note: 'he is great point scorer' },
-    { id: 4, name: 'Kentavious', school: 'NYU', points: 4, assists: 4, rebounds: 5, note: 'he is good point scorer' }
-  ]
-};
+fetch('src/players.json')
+  .then(res => res.json())
+  .then(function (data) {
+    startRender();
 
-// create div with specifed className that contains a p tag
-function createDiv(className, content) {
-  let pTag = document.createElement('p');
-  let divTag = document.createElement('div');
-  pTag.textContent = content;
-  divTag.classList.add(className);
-  divTag.appendChild(pTag);
-  // console.log(divTag);
-  return divTag;
-}
+    function startRender() {
+      for (let i = 0; i < data.players.length; i++) {
+        $('.gridView').append(createCard(data.players[i]));
+      }
+    }
 
-// create note btn
-function detailBtn(id) {
-  let btn = document.createElement('a');
-  btn.type = 'button';
-  btn.className = 'btn btn-secondary detailBtn';
-  btn.textContent = 'Note';
-  btn.id = id;
-  btn.addEventListener('click', showNote);
-  return btn;
-}
+    // create div with specifed className that contains a p tag
+    function createDiv(className, content) {
+      let pTag = document.createElement('p');
+      let divTag = document.createElement('div');
+      pTag.textContent = content;
+      divTag.classList.add(className);
+      divTag.appendChild(pTag);
+      // console.log(divTag);
+      return divTag;
+    }
 
-// event when the note btn was clicked
-function showNote() {
-  $('#note').empty();
-  let id = this.id;
-  let note = createDiv("noteDiv", data.players[id - 1].note)
-  $('#note').append(note);
-}
+    // create note btn
+    function detailBtn(id) {
+      let btn = document.createElement('a');
+      btn.type = 'button';
+      btn.className = 'btn btn-secondary detailBtn';
+      btn.textContent = 'Note';
+      btn.id = id;
+      btn.addEventListener('click', showNote);
+      return btn;
+    }
 
-// create li elements for ul
-function createLI(title, content) {
-  let li = document.createElement('li');
-  li.textContent = title + ": " + content;
-  return li;
-}
+    // event when the note btn was clicked
+    function showNote() {
+      $('#note').empty();
+      let id = this.id;
+      let note = createDiv("noteDiv", data.players[id - 1].note)
+      $('#note').append(note);
+    }
 
-// create ul
-function createUlList(player) {
-  let ulTag = document.createElement('ul');
-  ulTag.appendChild(createLI('Points', player.points));
-  ulTag.appendChild(createLI('Assists', player.assists));
-  ulTag.appendChild(createLI('Rebounds', player.rebounds));
+    // create li elements for ul
+    function createLI(title, content) {
+      let li = document.createElement('li');
+      li.textContent = title + ": " + content;
+      return li;
+    }
 
-  return ulTag;
-}
+    // create ul
+    function createUlList(player) {
+      let ulTag = document.createElement('ul');
+      ulTag.appendChild(createLI('Points', player.points));
+      ulTag.appendChild(createLI('Assists', player.assists));
+      ulTag.appendChild(createLI('Rebounds', player.rebounds));
 
-
-// create a single card given a player's info
-function createCard(player) {
-  // create first div
-  let colDiv = document.createElement('div');
-  colDiv.classList.add('col-sm');
-  colDiv.appendChild(createDiv("player-name", player.name));
-  colDiv.appendChild(createDiv("player-bio", 'From: ' + player.school));
-  colDiv.appendChild(detailBtn(player.id));
-
-  // create second div
-  let infoDiv = createDiv('player-info', 'Player Statistics:')
-  infoDiv.appendChild(createUlList(player));
+      return ulTag;
+    }
 
 
-  let cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
+    // create a single card given a player's info
+    function createCard(player) {
+      // create first div
+      let colDiv = document.createElement('div');
+      colDiv.classList.add('col-sm');
+      colDiv.appendChild(createDiv("player-name", player.name));
+      colDiv.appendChild(createDiv("player-bio", 'From: ' + player.school));
+      colDiv.appendChild(detailBtn(player.id));
 
-  cardBody.appendChild(colDiv);
-  cardBody.appendChild(infoDiv);
-  // console.log(cardBody);
-  return cardBody;
-}
+      // create second div
+      let infoDiv = createDiv('player-info', 'Player Statistics:')
+      infoDiv.appendChild(createUlList(player));
 
-$('.gridView').append(createCard(data.players[0]));
-$('.gridView').append(createCard(data.players[1]));
-$('.gridView').append(createCard(data.players[2]));
-$('.gridView').append(createCard(data.players[3]));
-$('.gridView').append(createCard(data.players[1]));
-$('.gridView').append(createCard(data.players[2]));
-$('.gridView').append(createCard(data.players[2]));
-$('.gridView').append(createCard(data.players[3]));
-$('.gridView').append(createCard(data.players[1]));
-$('.gridView').append(createCard(data.players[2]));
+      let cardBody = document.createElement('div');
+      cardBody.classList.add('card-body');
 
-// add an card from form
-function addCard(){
-  let player = {};
-  player.id = data.players.length + 1;
-  player.name = document.getElementById("playername").value;
-  player.school = document.getElementById("playerschool").value;
-  player.points = document.getElementById("ppg").value;
-  player.assists = document.getElementById("apg").value;
-  player.rebounds = document.getElementById("rpg").value;
-  player.note = document.getElementById("playernote").value;
-  data.players.push(player);
-  $('.gridView').append(createCard(player));
-}
+      cardBody.appendChild(colDiv);
+      cardBody.appendChild(infoDiv);
+      // console.log(cardBody);
+      return cardBody;
+    }
 
-// display warning on adding player
-function warn() {
-  alert("Successfully added player.")
-}
+    // add an card from form
+    function addCard() {
+      let player = {};
+      player.id = data.players.length + 1;
+      player.name = document.getElementById("playername").value;
+      player.school = document.getElementById("playerschool").value;
+      player.points = document.getElementById("ppg").value;
+      player.assists = document.getElementById("apg").value;
+      player.rebounds = document.getElementById("rpg").value;
+      player.note = document.getElementById("playernote").value;
+      data.players.push(player);
+      $('.gridView').append(createCard(player));
+    }
 
-let submit = document.querySelector("form");
-submit.addEventListener('submit', function(e) {
-  e.preventDefault();
-  addCard();
-  warn();
-  console.log(data.players);
-});
+    // display warning on adding player
+    function warn() {
+      alert("Successfully added player.")
+    }
+
+    let submit = document.querySelector("form");
+    submit.addEventListener('submit', function (e) {
+      e.preventDefault();
+      addCard();
+      warn();
+      console.log(data.players);
+    });
+  })
+  .catch(function (e) {
+        // create div with specifed className that contains a p tag
+        function createDiv(className, content) {
+          let pTag = document.createElement('p');
+          let divTag = document.createElement('div');
+          pTag.textContent = content;
+          divTag.classList.add(className);
+          divTag.appendChild(pTag);
+          // console.log(divTag);
+          return divTag;
+        }
+    let note = createDiv("noteDiv", "can't load data")
+    $('#note').append(note)
+  }
+  );
+
+

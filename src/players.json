@@ -1,0 +1,58 @@
+{
+    "players":[
+      {
+        "id":1,
+        "name":"LeBron",
+        "school":"UW",
+        "points":3,
+        "assists":4,
+        "rebounds":5,
+        "note":"he is average point scorer"
+      },
+      {
+        "id":2,
+        "name":"Karl",
+        "school":"UCLA",
+        "points":3,
+        "assists":4,
+        "rebounds":5,
+        "note":"he is average rebounder"
+      },
+      {
+        "id":3,
+        "name":"Lonzo",
+        "school":"WASU",
+        "points":6,
+        "assists":4,
+        "rebounds":5,
+        "note":"he is great point scorer"
+      },
+      {
+        "id":4,
+        "name":"Kentavious",
+        "school":"NYU",
+        "points":4,
+        "assists":4,
+        "rebounds":5,
+        "note":"he is good point scorer"
+      },
+      {
+        "id":5,
+        "name":"Kentavious",
+        "school":"NYU",
+        "points":4,
+        "assists":4,
+        "rebounds":5,
+        "note":"he is good point scorer"
+      },
+      {
+        "id":6,
+        "name":"Grant Yang",
+        "school":"UW",
+        "points":40,
+        "assists":10,
+        "rebounds":10,
+        "note":"Man he is just too good"
+      }
+    ]
+  }

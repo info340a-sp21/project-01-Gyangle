@@ -16,7 +16,7 @@ body {
   height: inherit;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .nav-link {
   color: #4b2e83;
   font-family: 'Encode Sans', sans-serif;
   font-weight: 90;
