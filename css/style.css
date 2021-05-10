@@ -1,6 +1,5 @@
 body {
-	color: #4b4b4b;
-  font-family: 'Open Sans', sans-serif;
+	color: red;
   height: 100%;
 }
 
@@ -9,30 +8,23 @@ h1, h2, h3 {
   font-family: 'Encode Sans', sans-serif;
   font-weight: 900;
 }
-
 .gridView {
-  width: 50%;
-  height: 100%;
-  padding: 3%;
+  width: 40%;
 }
-
 .gridView > div {
   display: flex;
-  width: 40%;
-  padding: 10px;
+  margin: 10px;
 }
 
 /* grid card */
 .card-body {
+  display: flex; /* flexbox for wrapping */
+  flex-wrap: wrap;
   border: thick double black;
   border-collapse: collapse;
   float: left;
 }
 
-.card img {
-  width: 30%;
-  float: left;
-}
 
 .player-name {
   text-align: center;
@@ -61,4 +53,8 @@ h1, h2, h3 {
   background-color: #e0dddd;
   border: thick double black;
   padding: 3%;
+}
+
+.detailBtn {
+  margin-top: 100px;
 }
