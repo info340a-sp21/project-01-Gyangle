@@ -23,7 +23,7 @@ function createDiv(className, content) {
 function detailBtn(id) {
   let btn = document.createElement('a');
   btn.type = 'button';
-  btn.className = 'btn btn-dark detailBtn';
+  btn.className = 'btn btn-secondary detailBtn';
   btn.textContent = 'Note';
   btn.id = id;
   btn.addEventListener('click', showNote);
