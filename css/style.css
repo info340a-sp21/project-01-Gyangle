@@ -1,34 +1,41 @@
 *{
   box-sizing:border-box;
   }
-  /*header*/
+
 header{
   width: 100%;
   height: 100px;
   display: flex;
   background-color: #8b7878;
 }
-/* body {
+body {
+  margin: 0%;
   height: 100%;
-} */
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
 
 h1, h2, h3 {
   color: #4b2e83;
   font-family: 'Encode Sans', sans-serif;
-  font-weight: 90;
+  font-weight: 700;
 }
 .gridView {
   width: 40%;
+  
 }
 .gridView > div {
   display: flex;
   margin: 20px;
+  
 }
 
 /* grid card */
 .card-body {
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-flow: center;
   border: thick double black;
   border-collapse: collapse;
   float: left;
@@ -42,6 +49,7 @@ h1, h2, h3 {
 
 .player-bio {
   text-align: left;
+
 }
 
 .submitPlayer{
@@ -79,3 +87,4 @@ ul {
   padding: 10px 20px;
   margin: 5px 20px;
 }
+
