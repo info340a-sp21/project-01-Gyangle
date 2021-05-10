@@ -57,7 +57,6 @@ function createUlList(player) {
 
 // create a single card given a player's info
 function createCard(player) {
-
   // create first div
   let colDiv = document.createElement('div');
   colDiv.classList.add('col-sm');
@@ -78,6 +77,7 @@ function createCard(player) {
   // console.log(cardBody);
   return cardBody;
 }
+
 $('.gridView').append(createCard(data.players[0]));
 $('.gridView').append(createCard(data.players[1]));
 $('.gridView').append(createCard(data.players[2]));
