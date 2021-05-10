@@ -1,5 +1,4 @@
 body {
-	color: red;
   height: 100%;
 }
 
@@ -18,8 +17,8 @@ h1, h2, h3 {
 
 /* grid card */
 .card-body {
-  display: flex; /* flexbox for wrapping */
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   border: thick double black;
   border-collapse: collapse;
   float: left;
@@ -57,4 +56,10 @@ h1, h2, h3 {
 
 .detailBtn {
   margin-top: 100px;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+
 }
