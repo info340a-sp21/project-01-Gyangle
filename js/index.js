@@ -4,7 +4,27 @@ fetch('src/players.json')
   .then(function (data) {
     startRender();
 
+    document.getElementById('sortBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      // clear board
+
+      let myNode = document.querySelector('.gridView');
+      // console.log(myNode);
+      while (myNode.firstChild) {
+        myNode.removeChild(myNode.lastChild);
+      }
+      // console.log(data.players);
+      let newData = { players: sortByPoints(data) };
+      data = newData;
+      startRender();
+    })
+
+    function sortByPoints(playerObj) {
+      return playerObj.players.sort((a, b) => (a.points < b.points) ? 1 : -1);
+    }
+
     function startRender() {
+      // console.log(data.players)
       for (let i = 0; i < data.players.length; i++) {
         $('.gridView').append(createCard(data.players[i]));
       }
@@ -64,8 +84,10 @@ fetch('src/players.json')
       let colDiv = document.createElement('div');
       colDiv.classList.add('col-sm');
       colDiv.appendChild(createDiv("player-name", player.name));
+      colDiv.appendChild(generatePic());
       colDiv.appendChild(createDiv("player-bio", 'From: ' + player.school));
       colDiv.appendChild(detailBtn(player.id));
+
 
       // create second div
       let infoDiv = createDiv('player-info', 'Player Statistics:')
@@ -73,11 +95,16 @@ fetch('src/players.json')
 
       let cardBody = document.createElement('div');
       cardBody.classList.add('card-body');
-
       cardBody.appendChild(colDiv);
       cardBody.appendChild(infoDiv);
       // console.log(cardBody);
       return cardBody;
+    }
+
+    function generatePic() {
+      let img = document.createElement('img');
+      img.src = "./img/" + Math.floor(Math.random() * 5) + ".jpeg";
+      return img;
     }
 
     // add an card from form
@@ -104,22 +131,22 @@ fetch('src/players.json')
       e.preventDefault();
       addCard();
       warn();
-      console.log(data.players);
     });
   })
-  .catch(function () {
-        // create div with specifed className that contains a p tag
-        function createDiv(className, content) {
-          let pTag = document.createElement('p');
-          let divTag = document.createElement('div');
-          pTag.textContent = content;
-          divTag.classList.add(className);
-          divTag.appendChild(pTag);
-          // console.log(divTag);
-          return divTag;
-        }
-    let note = createDiv("noteDiv", "can't load data")
-    $('#note').append(note)
+  .catch((e) => {
+    console.log(e)
+    // create div with specifed className that contains a p tag
+    function createDiv(className, content) {
+      let pTag = document.createElement('p');
+      let divTag = document.createElement('div');
+      pTag.textContent = content;
+      divTag.classList.add(className);
+      divTag.appendChild(pTag);
+      // console.log(divTag);
+      return divTag;
+    }
+    let note = createDiv("noteDiv", "can't load data");
+    $('#note').append(note);
   }
   );
 

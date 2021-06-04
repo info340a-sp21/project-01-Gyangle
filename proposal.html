@@ -5,9 +5,12 @@
     <meta charset="utf-8">
     <meta name="author" content="Grant Yang">
     <meta name="description" content="A proposal page for the INFO 340 project 1.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpg" href="/favicon-16x16.png"/>
     <title>Project 1 Proposal</title>
 
 </head>
@@ -19,24 +22,15 @@
 
     <!-- info -->
     <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="main_page.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="proposal.html">Proposal</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="main_page.html">About</a>
+        <a href="proposal.html">Proposal</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
         <h2>About Us:</h2>
         <address>
             <ul>
@@ -60,6 +54,16 @@
         <p>The users of the application will be those running a recreational sports league and interested in organizing teams with their friends as well as keeping track of statistics and tournament brackets. Users will be viewing information including dates, for example on a calendar of scheduled events input by them, as well as statistics for their team members that are also input by them.</p>
         <p>The users will interact with the web app by creating their teams and inputting/selecting team members (for example their friends) as well as scheduling events, for example games between other teams, and finally inputting statistics for their teammates, for example number of assists or 2-point field goals scored. Registering the web app will also be another way for users to interact. Using this web app will help people interested in enhancing their recreational sport experience keep track of their team statistics as well as organize their team and have a good way of scheduling sporting events with other teams registered on the web app.</p>
     </section>
-</body>
 
+</body>
+<script>
+  function navFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
 </html>
